@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+
+
+.portal{
+  position: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.gradient {
+  background: linear-gradient(to right top,#ffc600 20%,#ff0040,#e600cc 80%);
+}
+
+.left-dir-gradient:active {
+  background: linear-gradient(90deg, rgba(0,0,0,0.5), transparent);
+}
+
+.right-dir-gradient:active {
+  background: linear-gradient(-90deg, rgba(0,0,0,0.5), transparent);
+}
+
+.toHidden{
+  overflow-y: hidden;
+}
+
+.story-hover{
+  @apply block w-full h-[2px] rounded-full bg-[rgba(255,255,255,0.25)];
+}
+
+.story-hover-transition{
+  animation: storyHoverTransition 5s linear;
+  background-color: white;
+}
+
+.animation-pause{
+  animation-play-state: paused;
+}
+
+.transition-finished{
+  background-color: white;
+}
+
+@keyframes storyHoverTransition {
+  0%{
+    width: 0px;
+  }
+  100%{
+    width: 100%;
+  }
+}
