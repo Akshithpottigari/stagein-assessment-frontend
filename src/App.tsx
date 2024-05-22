@@ -12,9 +12,9 @@ import { StoryPortal } from "./portals/StoryPortal";
 import UserProvider from "./contexts/UsersContext";
 
 function App() {
-  const [state, dispatch] = useReducer(reducerFn, getInitState());
+  const [state, dispatch] = useReducer(reducerFn as any, getInitState());
   const globalState = {
-    ...state,
+    ...(state as any),
     dispatch,
   };
 
