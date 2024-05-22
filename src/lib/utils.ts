@@ -10,7 +10,7 @@ import {
 } from "../types";
 
 export class Timer {
-  static id: Timeout | null;
+  static id: any;
 }
 
 export const getCurrentStory = (stories: string[], current: string) => {

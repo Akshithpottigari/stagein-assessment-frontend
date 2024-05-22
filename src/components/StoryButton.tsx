@@ -7,6 +7,7 @@ import {
 } from "../types";
 import { AppContext } from "../contexts/AppContext";
 import { getInitialClassName, setNextPrevStory } from "../lib/utils";
+import { UserContext } from "../contexts/UsersContext";
 
 interface StoryButtonProps {
   children?: React.ReactNode;
@@ -21,11 +22,14 @@ const StoryButton: React.FC<StoryButtonProps> = ({
     StoriesContext
   ) as StoriesContextInterface;
   const { dispatch } = useContext(AppContext) as AppContextInterface;
+  const { users, loading, error, stories } = useContext(UserContext);
   const nextPrevStoryConfig: NextPrevStoryProps = {
     direction,
     userId,
     currentStories,
     currentStory,
+    stories,
+    users,
     storiesDispatch,
     dispatch,
   };
